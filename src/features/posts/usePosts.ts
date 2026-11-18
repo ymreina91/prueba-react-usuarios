@@ -8,5 +8,6 @@ export function useUserPosts(userId: number) {
     queryKey: postsKey(userId), // Clave única para la consulta de publicaciones del usuario
     queryFn: () => getPostsByUser(userId), // Función que obtiene las publicaciones del usuario
     enabled: !!userId, // Solo se ejecuta si userId es un valor válido (no null o undefined)
+    staleTime: Infinity, // la API no guarda cambios: no volver a pedir la lista sola
   });
 }

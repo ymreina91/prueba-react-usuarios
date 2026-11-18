@@ -44,7 +44,7 @@ export function UserList({ selectedUserId, onSelectUser }: UserListProps) {
                             className="user-button"
                             aria-pressed={selectedUserId === user.id}    
                             onClick={() => onSelectUser(user.id)}>
-                                <p className="user-name">{user.name}</p>
+                                <span className="user-name">{user.name}</span>
                                 <small>({user.email})</small>
                             </button>
                         </li>
