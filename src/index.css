@@ -95,3 +95,79 @@ p {
   margin: 0;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+section {
+  padding: 10px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+button {
+  padding: 2.5px 10px;
+  border: 1px solid #2952cc;
+  border-radius: 6px;
+  background: #2952cc;
+  color: #fff;
+  font: inherit;
+  margin-bottom: 8px;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(41, 82, 204, 0.5);
+}
+
+.error {
+  background: #fdecea;
+  color: #b42318;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.error button {
+  background: #b42318;
+  border-color: #b42318;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
+}

@@ -7,8 +7,8 @@ import App from './App.tsx'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      retry: 1,
-      refetchOnWindowFocus: false,
+      retry: 1, //reintenta una vez si falla
+      refetchOnWindowFocus: false, //no refetch al cambiar de ventana
     },
   },
 })
