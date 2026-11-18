@@ -1,6 +1,6 @@
 import { request } from './client';
-import { User } from './types';
+import type { User } from './types';
 
-esport function getUsers(): Promise<User[]> {
+export function getUsers(): Promise<User[]> {
   return request<User[]>('/users');
 }
