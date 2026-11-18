@@ -169,6 +169,10 @@ button:hover {
   padding: 12px 0;
 }
 
+.user-name {
+  display: inline-block;
+}
+
 .posts {
   display: grid;
   grid-template-columns: 1fr;
@@ -188,6 +192,7 @@ button:hover {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 12px;
+  text-align: left;
 }
 
 .post-list li h3 {
@@ -199,4 +204,80 @@ button:hover {
 .post-list li p {
   margin: 0;
   color: var(--text);
+}
+
+.post-form {
+  border-bottom: 1px solid #dfe3ea;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.post-form h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field-error {
+  color: #b42318;
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+
+[aria-invalid='true'] {
+  border-color: #b42318;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error + button {
+  margin-top: 12px;
+}
+
+.posts-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.posts-header h2 {
+  text-align: left;
+  margin: 0;
+}
+
+.dialog {
+  width: min(520px, calc(100% - 32px));
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  background: #ffffff;
+  color: #1d2330;
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.dialog .post-form {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.button-secondary {
+  background: transparent;
+  color: #2952cc;
 }

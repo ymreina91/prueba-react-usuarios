@@ -1,6 +1,7 @@
 import type { User } from '../../api/types';
 import { ErrorMsg, Loading } from '../../components/Status';
 import { useUserPosts } from './usePosts';
+import { NewPostDialog } from './NewPostDialog';
 
 interface UserPostsProps {
   user: User;
@@ -11,7 +12,10 @@ export function UserPosts({ user }: UserPostsProps) {
 
   return (
     <section className="posts" aria-label="Publicaciones del usuario">
-      <h2 id="posts-title">Publicaciones de {user.name}</h2>
+      <div className="posts-header">
+        <h2 id="posts-title">Publicaciones de {user.name}</h2>
+        <NewPostDialog userId={user.id}/>
+      </div>
 
       {isLoading && <Loading message="Cargando publicaciones..." />}
       {isError && <ErrorMsg message="Error al cargar publicaciones." onRetry={refetch} />}

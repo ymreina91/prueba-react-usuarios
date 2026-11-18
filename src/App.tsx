@@ -20,7 +20,7 @@ function App() {
           onSelectUser={setSelectedUserId} 
         />
 
-        <main className="posts" area-label="Posts">
+        <main className="posts" aria-labelledby="posts-title">
           {selectedUser ? (
             <UserPosts key={selectedUser.id} user={selectedUser} />
           ) : (
