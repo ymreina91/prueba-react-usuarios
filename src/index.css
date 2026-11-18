@@ -55,7 +55,6 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -165,9 +164,39 @@ button:hover {
   border-color: #b42318;
 }
 
+.no-user-selected {
+  color: #5d6677;
+  padding: 12px 0;
+}
+
 .posts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
   align-items: start;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.post-list li {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.post-list li h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  color: var(--text-h);
+}
+
+.post-list li p {
+  margin: 0;
+  color: var(--text);
 }

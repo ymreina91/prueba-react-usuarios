@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { UserList } from './features/users/UserList';
+import { UserPosts } from './features/posts/UserPosts';
+import { useUsers } from './features/users/useUsers';
+import type { User } from './api/types';
 
 function App() {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
+
+  const { data: users } = useUsers();
+  const selectedUser = users?.find((user) => user.id === selectedUserId) as User | undefined;
 
   return (
     <div className="layout">
@@ -15,10 +21,10 @@ function App() {
         />
 
         <main className="posts" area-label="Posts">
-          {selectedUserId ? (
-            <p>Mostrando publicaciones del usuario con ID: {selectedUserId}</p>
+          {selectedUser ? (
+            <UserPosts key={selectedUser.id} user={selectedUser} />
           ) : (
-            <p>Selecciona un usuario para ver sus publicaciones.</p>
+            <p className="no-user-selected">Selecciona un usuario para ver sus publicaciones.</p>
           )}
         </main>
       </div>
